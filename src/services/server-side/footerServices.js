@@ -5,8 +5,8 @@ export const fetchSocialNetwork = () => {
     `${serverUrl}/api/global?populate[navigation][populate][social_network][populate][0]=icon`,
     {
       next: {
-        revalidate: 60,
+        revalidate: 60
       }
     }
-  ).then((res) => res.json());
+  ).then((res) => res.json())
 }
