@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { LoginButton, LoginInput } from '@/ui-components/StyledComponents'
 import { Mail } from '@mui/icons-material'
