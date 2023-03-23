@@ -7,8 +7,6 @@ import GroupCongratsCardContent from "./GroupCongratsCardContent";
 import NewsCardContent from "./NewsCardContent";
 import SpecialDayCardContent from "./SpecialDayCardContent";
 
-const serverUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
-
 function LowCarousel({responsive, allNews, handleOpen, setNotice, setPosition, findExtension}) {
 
     const selectContent = (component, news) => {
@@ -68,7 +66,7 @@ function LowCarousel({responsive, allNews, handleOpen, setNotice, setPosition, f
                                             height: '100%',
                                             objectFit: 'cover'
                                         }}
-                                        image={`${serverUrl}${news?.media.url}`}
+                                        image={`${news?.media.url}`}
                                         title="modal_image"
                                         autoPlay
                                     />
@@ -86,7 +84,7 @@ function LowCarousel({responsive, allNews, handleOpen, setNotice, setPosition, f
                                                 objectFit: 'cover',
                                                 display: news?.image ? 'block' : 'none'
                                             }}
-                                            image={`${serverUrl}${news.image?.url}`}
+                                            image={`${news.image?.url}`}
                                             title="modal_image"
                                             autoPlay
                                         />

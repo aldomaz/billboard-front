@@ -1,7 +1,5 @@
 import { Box } from "@mui/material"
 import { ContentModalContainer, MediaModalContainer, NewsModalContent, NewsModalDate, NewsModalSubtitle, NewsModalTitle } from "@/ui-components/StyledComponents"
-import { Height } from "@mui/icons-material";
-const serverUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
 
 function NewsContent({notice, findExtension}) {
     return (
@@ -15,7 +13,7 @@ function NewsContent({notice, findExtension}) {
                 sx={{
                     display: notice?.image ? 'block' : 'none'
                 }}
-                image={`${serverUrl}${notice?.image?.url}`}
+                image={`${notice?.image?.url}`}
                 title="modal_media"
                 autoPlay
             />

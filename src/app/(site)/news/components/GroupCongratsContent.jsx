@@ -1,9 +1,5 @@
 import { Box, Typography } from "@mui/material"
 import { ContentModalContainer, MediaModalContainer, NewsModalContent, NewsModalDate, NewsModalSubtitle, NewsModalTitle } from "@/ui-components/StyledComponents"
-import Moment from 'moment';
-import 'moment/locale/es';
-
-const serverUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
 
 function GroupCongratsContent({notice, findExtension}) {
     
@@ -18,7 +14,7 @@ function GroupCongratsContent({notice, findExtension}) {
                 sx={{
                     display: notice?.image ? 'block' : 'none'
                 }}
-                image={`${serverUrl}${notice?.image?.url}`}
+                image={`${notice?.image?.url}`}
                 title="modal_media"
                 autoPlay
             />

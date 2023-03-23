@@ -7,8 +7,6 @@ import CongratsCardContent from "./CongratsCardContent";
 import GroupCongratsCardContent from "./GroupCongratsCardContent";
 import SpecialDayCardContent from "./SpecialDayCardContent";
 
-const serverUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
-
 function MediumCarousel({responsive, allNews, handleOpen, setNotice, setPosition, findExtension}) {
 
     const selectContent = (component, news) => {
@@ -66,7 +64,7 @@ function MediumCarousel({responsive, allNews, handleOpen, setNotice, setPosition
                                             height: '100%',
                                             objectFit: 'cover'
                                         }}
-                                        image={`${serverUrl}${news?.media.url}`}
+                                        image={`${news?.media.url}`}
                                         title="modal_image"
                                         autoPlay
                                     />
@@ -83,7 +81,7 @@ function MediumCarousel({responsive, allNews, handleOpen, setNotice, setPosition
                                             objectFit: 'cover',
                                             display: news?.image ? 'block' : 'none'
                                         }}
-                                        image={`${serverUrl}${news.image?.url}`}
+                                        image={`${news.image?.url}`}
                                         title="modal_image"
                                         autoPlay
                                     />

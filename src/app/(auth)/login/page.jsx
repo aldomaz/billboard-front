@@ -10,7 +10,6 @@ import { AccountCircle, Mail } from '@mui/icons-material';
 import LoginCarousel from './LoginCarousel';
 import Loading from '@/app/components/Loading';
 import Link from 'next/link';
-const serverUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
 
 const Login = () => {
 
@@ -93,7 +92,7 @@ const Login = () => {
                         borderBottomRightRadius: {xs: '20px', md: '0px'}
                     }}
                 >
-                    <img className='login_icon' alt="icon" src={`${serverUrl}${loginData?.data.attributes.Icon.data.attributes.url}`}/>
+                    <img className='login_icon' alt="icon" src={`${loginData?.data.attributes.Icon.data.attributes.url}`}/>
                     <Typography
                         sx={{
                             fontSize: {xs: '24px', md: '28px', lg: '32px'},

@@ -1,9 +1,7 @@
 import React , {useState} from 'react';
 import Popover from '@mui/material/Popover';
-import Typography from '@mui/material/Typography';
-import { Box, Button, Card, CardContent, CardMedia, IconButton, ImageList, ImageListItem, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { Box, Button, ImageList, ImageListItem } from '@mui/material';
 import { Menu } from '@mui/icons-material';
-const serverUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
 
 export default function LayoutSelector({setLayoutSelected, setDirection, layouts}) {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -78,7 +76,7 @@ export default function LayoutSelector({setLayoutSelected, setDirection, layouts
                         >
                             <img
                                 className='layout_image'
-                                src={`${serverUrl}${layouts[0]?.attributes.url}`}
+                                src={`${layouts[0]?.attributes.url}`}
                                 alt={layouts[0]?.attributes.name}
                                 loading="lazy"
                             />
@@ -95,7 +93,7 @@ export default function LayoutSelector({setLayoutSelected, setDirection, layouts
                         >
                             <img
                                 className='layout_image'
-                                src={`${serverUrl}${layouts[1]?.attributes.url}`}
+                                src={`${layouts[1]?.attributes.url}`}
                                 alt={layouts[1]?.attributes.name}
                                 loading="lazy"
                             />
@@ -112,7 +110,7 @@ export default function LayoutSelector({setLayoutSelected, setDirection, layouts
                         >
                             <img
                                 className='layout_image'
-                                src={`${serverUrl}${layouts[2]?.attributes.url}`}
+                                src={`${layouts[2]?.attributes.url}`}
                                 alt={layouts[2]?.attributes.name}
                                 loading="lazy"
                             />
@@ -129,7 +127,7 @@ export default function LayoutSelector({setLayoutSelected, setDirection, layouts
                         >
                             <img
                                 className='layout_image'
-                                src={`${serverUrl}${layouts[3]?.attributes.url}`}
+                                src={`${layouts[3]?.attributes.url}`}
                                 alt={layouts[3]?.attributes.name}
                                 loading="lazy"
                             />
@@ -146,7 +144,7 @@ export default function LayoutSelector({setLayoutSelected, setDirection, layouts
                         >
                             <img
                                 className='layout_image'
-                                src={`${serverUrl}${layouts[4]?.attributes.url}`}
+                                src={`${layouts[4]?.attributes.url}`}
                                 alt={layouts[4]?.attributes.name}
                                 loading="lazy"
                             />
@@ -163,7 +161,7 @@ export default function LayoutSelector({setLayoutSelected, setDirection, layouts
                         >
                             <img
                                 className='layout_image'
-                                src={`${serverUrl}${layouts[5]?.attributes.url}`}
+                                src={`${layouts[5]?.attributes.url}`}
                                 alt={layouts[5]?.attributes.name}
                                 loading="lazy"
                             />
