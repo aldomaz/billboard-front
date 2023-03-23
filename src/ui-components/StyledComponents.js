@@ -66,7 +66,7 @@ export const LoginButton = styled(Button)(({ theme }) => ({
 export const NewsModalContainer = styled(Modal)(() => ({
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center',
+  alignItems: 'center'
 }))
 
 export const NewsModal = styled(Box)(({ theme }) => ({
