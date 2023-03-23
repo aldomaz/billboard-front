@@ -1,17 +1,17 @@
 'use client'
 
-import React, {useEffect, useState} from 'react';
-import {Box} from '@mui/material';
+import React, { useEffect, useState } from 'react'
+import { Box } from '@mui/material'
 import Carousel from 'react-material-ui-carousel'
 
-export default function LoginCarousel({ data }){
-  const [items, setItems] = useState([]);
+export default function LoginCarousel ({ data }) {
+  const [items, setItems] = useState([])
 
   useEffect(() => {
-    setItems(data);
-  }, [data]);
+    setItems(data)
+  }, [data])
 
-  console.log(items);
+  console.log(items)
 
   return (
     <Carousel
@@ -19,30 +19,30 @@ export default function LoginCarousel({ data }){
       indicators={false}
       nav
       sx={{
-        display: "flex",
-        alignItems: "center",
-        padding: "16px",
-        justifyContent: "center",
-        textAlign: "center",
-        width: "100%",
-        height: "100%",
+        display: 'flex',
+        alignItems: 'center',
+        padding: '16px',
+        justifyContent: 'center',
+        textAlign: 'center',
+        width: '100%',
+        height: '100%'
       }}
     >
       {items?.map((item) => (
         <Box
           key={item.id}
           sx={{
-            width: "100%",
-            height: "100%",
+            width: '100%',
+            height: '100%',
           }}
         >
           <img
-            className="login_image"
-            width="100%"
+            className='login_image'
+            width='100%'
             src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${item.attributes.url}`}
           />
         </Box>
       ))}
     </Carousel>
-  );
+  )
 }
