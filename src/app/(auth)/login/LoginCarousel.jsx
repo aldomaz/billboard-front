@@ -33,13 +33,14 @@ export default function LoginCarousel ({ data }) {
           key={item.id}
           sx={{
             width: '100%',
-            height: '100%',
+            height: '100%'
           }}
         >
           <img
             className='login_image'
             width='100%'
             src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${item.attributes.url}`}
+            alt={"login"}
           />
         </Box>
       ))}
