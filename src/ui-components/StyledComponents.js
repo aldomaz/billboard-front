@@ -17,10 +17,10 @@ export const SectionContainer = styled(Box)(({ theme }) => ({
   marginInline: '15%',
   marginBottom: '16px',
   [theme.breakpoints.down('lg')]: {
-    marginInline: '5%',
+    marginInline: '5%'
   },
   [theme.breakpoints.down('md')]: {
-    marginInline: '32px',
+    marginInline: '32px'
   }
 }))
 
@@ -37,10 +37,10 @@ export const PrimaryButton = styled(Button)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     width: '50%',
     fontWeight: 'bold',
-    margin: '64px 0',
+    margin: '64px 0'
   },
   '&:hover': {
-    backgroundColor: '#00cb6d',
+    backgroundColor: '#00cb6d'
   }
 }))
 
@@ -55,11 +55,11 @@ export const LoginButton = styled(Button)(({ theme }) => ({
   fontWeight: 'normal',
   [theme.breakpoints.down('md')]: {
     width: '50%',
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   '&:hover': {
     backgroundColor: '#3fff9c',
-    color: '#131313',
+    color: '#131313'
   }
 }))
 
@@ -79,13 +79,13 @@ export const NewsModal = styled(Box)(({ theme }) => ({
   borderRadius: '20px',
   boxShadow: '-4px -4px rgba(84,104,110,0.4)',
   [theme.breakpoints.down('lg')]: {
-    width: '70vw',
+    width: '70vw'
   },
   [theme.breakpoints.down('md')]: {
-    width: '80vw',
+    width: '80vw'
   },
   [theme.breakpoints.down('md')]: {
-    width: '90vw',
+    width: '90vw'
   }
 }))
 
@@ -102,10 +102,10 @@ export const ContentModalContainer = styled(Box)(({ theme }) => ({
   height: '56%',
   overflowY: 'auto',
   [theme.breakpoints.down('lg')]: {
-    padding: '0 32px',
+    padding: '0 32px'
   },
   [theme.breakpoints.down('sm')]: {
-    padding: '0 16px',
+    padding: '0 16px'
   }
 }))
 
@@ -117,7 +117,7 @@ export const CloseButton = styled(IconButton)(() => ({
   color: '#FFF',
   background: '#13131354',
   '&:hover': {
-    background: '#131313a8',
+    background: '#131313a8'
   }
 }))
 
@@ -125,13 +125,13 @@ export const NewsModalTitle = styled(Typography)(({ theme }) => ({
   fontSize: '26px',
   fontWeight: 700,
   [theme.breakpoints.down('md')]: {
-    fontSize: '24px',
+    fontSize: '24px'
   },
   [theme.breakpoints.down('sm')]: {
-    fontSize: '22px',
+    fontSize: '22px'
   },
   [theme.breakpoints.up('lg')]: {
-    fontSize: '3vw',
+    fontSize: '3vw'
   }
 }))
 
@@ -145,11 +145,11 @@ export const NewsModalDate = styled(Typography)(({ theme }) => ({
   margin: '16px 0',
   [theme.breakpoints.down('lg')]: {
     fontSize: '14px',
-    width: '100px',
+    width: '100px'
   },
   [theme.breakpoints.down('sm')]: {
     fontSize: '12px',
-    width: '80px',
+    width: '80px'
   }
 }))
 
@@ -160,13 +160,13 @@ export const NewsModalSubtitle = styled(Typography)(({ theme }) => ({
   fontStyle: 'italic',
   color: '#3fff9c',
   [theme.breakpoints.down('md')]: {
-    fontSize: '22px',
+    fontSize: '22px'
   },
   [theme.breakpoints.down('sm')]: {
-    fontSize: '20px',
+    fontSize: '20px'
   },
   [theme.breakpoints.up('lg')]: {
-    fontSize: '1.5vw',
+    fontSize: '1.5vw'
   }
 }))
 
@@ -174,10 +174,10 @@ export const NewsModalContent = styled(Typography)(({ theme }) => ({
   fontSize: '18px',
   wordSpacing: '1px',
   [theme.breakpoints.down('sm')]: {
-    fontSize: '16px',
+    fontSize: '16px'
   },
   [theme.breakpoints.up('lg')]: {
-    fontSize: '1.2vw',
+    fontSize: '1.2vw'
   }
 }))
 
@@ -202,7 +202,7 @@ export const PrimaryInput = styled(InputBase)(() => ({
     lineHeight: '24px',
     letterSpacing: '0.1px',
     padding: '12px 16px',
-    height: '35px',
+    height: '35px'
   }
 }))
 
@@ -220,10 +220,10 @@ export const LoginInput = styled(Input)(() => ({
     lineHeight: '24px',
     letterSpacing: '0.1px',
     padding: '12px 16px',
-    height: '35px',
+    height: '35px'
   },
   '&:hover': {
-    border: '1px solid #3fff9c',
+    border: '1px solid #3fff9c'
   }
 }))
 
@@ -231,19 +231,19 @@ export const StyledRadio = styled(Radio)(() => ({
   color: '#c4c4c4',
   marginLeft: '8px',
   '&:hover': {
-    color: '#3fff9c',
+    color: '#3fff9c'
   },
   '&.Mui-checked': {
-    color: '#3fff9c',
+    color: '#3fff9c'
   }
 }))
 
 export const StyledCheckBox = styled(Checkbox)(() => ({
   color: '#3fff9c',
   '&:hover': {
-    color: '#3fff9c',
+    color: '#3fff9c'
   },
   '&.Mui-checked': {
-    color: '#3fff9c',
+    color: '#3fff9c'
   }
 }))
