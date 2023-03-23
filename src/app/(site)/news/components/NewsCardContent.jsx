@@ -1,0 +1,68 @@
+function NewsCardContent({news, level}) {
+
+    const selectRelevance = (level) => {
+        switch(level){
+            case 'principal':
+                return (
+                    <>
+                        <div className="title-content">
+                            <h3>{news.title}</h3>
+                            <h4>{news.subtitle}</h4>
+                        </div>
+                        <div className="card-info">
+                            {news.content}
+                        </div>
+                        <div className="utility-info">
+                            <ul className="utility-list">
+                                <li className="date">{news.date}</li>
+                            </ul>
+                        </div>
+                        <div className="color-overlay"></div>
+                    </>
+                )
+            case 'medium':
+                return (
+                    <>
+                        <div className="title-content2">
+                            <h3>{news.title}</h3>
+                            <h4 className="intro">{news.subtitle}</h4>
+                        </div>
+                        <div className="card2-info">
+                            {news.content} 
+                        </div>
+                        <div className="utility-info">
+                            <ul className="utility-list2">
+                                <li className="date">{news.date}</li>
+                            </ul>
+                        </div>
+                        <div className="gradient-overlay"></div>
+                        <div className="color-overlay"></div>
+                    </>
+                )
+            case 'low':
+                return (
+                    <>
+                        <div className="title-content3">
+                        <h3>{news.title}</h3>
+                        <h4 className="intro">{news.subtitle}</h4>
+                        </div>
+                        <div className="card3-info">
+                            {news.content} 
+                        </div>
+                    </>
+                )
+        }
+    }
+
+    return (
+       
+        <>
+            {
+               selectRelevance(level)
+            }
+            
+        </>
+    )
+}
+
+export default NewsCardContent
