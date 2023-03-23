@@ -152,7 +152,7 @@ function NewsPage() {
                     justifyContent: 'center',
                 }}
             >
-                <img className='brand_logo_image' src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${logoUrl}`}/>
+                <img className='brand_logo_image' src={`${logoUrl}`}/>
             </Box>
             {
                 selectLayout()

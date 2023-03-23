@@ -9,7 +9,7 @@ export default async function Head() {
     return (
         <>
             <title>{headTitle}</title>
-            <link rel="icon" href={`${process.env.NEXT_PUBLIC_STRAPI_URL}${headIcon.data.attributes.url}`} />
+            <link rel="icon" href={`${headIcon.data.attributes.url}`} />
         </>
     )
 } 
