@@ -9,7 +9,7 @@ import {
   InputLabel,
   Modal,
   Radio,
-  Typography,
+  Typography
 } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
@@ -41,8 +41,8 @@ export const PrimaryButton = styled(Button)(({ theme }) => ({
   },
   '&:hover': {
     backgroundColor: '#00cb6d',
-  },
-}));
+  }
+}))
 
 export const LoginButton = styled(Button)(({ theme }) => ({
   width: '244px',
@@ -60,14 +60,14 @@ export const LoginButton = styled(Button)(({ theme }) => ({
   '&:hover': {
     backgroundColor: '#3fff9c',
     color: '#131313',
-  },
-}));
+  }
+}))
 
 export const NewsModalContainer = styled(Modal)(() => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-}));
+}))
 
 export const NewsModal = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -86,15 +86,15 @@ export const NewsModal = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down('md')]: {
     width: '90vw',
-  },
-}));
+  }
+}))
 
 export const MediaModalContainer = styled(CardMedia)(() => ({
   height: '40%',
   borderTopLeftRadius: '20px',
   borderTopRightRadius: '20px',
-  objectFit: 'cover',
-}));
+  objectFit: 'cover'
+}))
 
 export const ContentModalContainer = styled(Box)(({ theme }) => ({
   padding: '0 64px',
@@ -106,8 +106,8 @@ export const ContentModalContainer = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down('sm')]: {
     padding: '0 16px',
-  },
-}));
+  }
+}))
 
 export const CloseButton = styled(IconButton)(() => ({
   position: 'absolute',
@@ -118,8 +118,8 @@ export const CloseButton = styled(IconButton)(() => ({
   background: '#13131354',
   '&:hover': {
     background: '#131313a8',
-  },
-}));
+  }
+}))
 
 export const NewsModalTitle = styled(Typography)(({ theme }) => ({
   fontSize: '26px',
@@ -132,8 +132,8 @@ export const NewsModalTitle = styled(Typography)(({ theme }) => ({
   },
   [theme.breakpoints.up('lg')]: {
     fontSize: '3vw',
-  },
-}));
+  }
+}))
 
 export const NewsModalDate = styled(Typography)(({ theme }) => ({
   fontSize: '0.8vw',
@@ -150,8 +150,8 @@ export const NewsModalDate = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     fontSize: '12px',
     width: '80px',
-  },
-}));
+  }
+}))
 
 export const NewsModalSubtitle = styled(Typography)(({ theme }) => ({
   padding: '16px 0',
@@ -167,8 +167,8 @@ export const NewsModalSubtitle = styled(Typography)(({ theme }) => ({
   },
   [theme.breakpoints.up('lg')]: {
     fontSize: '1.5vw',
-  },
-}));
+  }
+}))
 
 export const NewsModalContent = styled(Typography)(({ theme }) => ({
   fontSize: '18px',
@@ -178,16 +178,16 @@ export const NewsModalContent = styled(Typography)(({ theme }) => ({
   },
   [theme.breakpoints.up('lg')]: {
     fontSize: '1.2vw',
-  },
-}));
+  }
+}))
 
 export const PrimaryInputLabel = styled(InputLabel)(() => ({
   marginLeft: '8px',
   fontStyle: 'normal',
   fontWeight: 700,
   fontSize: '20px',
-  color: '#fff',
-}));
+  color: '#fff'
+}))
 
 export const PrimaryInput = styled(InputBase)(() => ({
   width: '100%',
@@ -203,8 +203,8 @@ export const PrimaryInput = styled(InputBase)(() => ({
     letterSpacing: '0.1px',
     padding: '12px 16px',
     height: '35px',
-  },
-}));
+  }
+}))
 
 export const LoginInput = styled(Input)(() => ({
   width: '100%',
@@ -224,8 +224,8 @@ export const LoginInput = styled(Input)(() => ({
   },
   '&:hover': {
     border: '1px solid #3fff9c',
-  },
-}));
+  }
+}))
 
 export const StyledRadio = styled(Radio)(() => ({
   color: '#c4c4c4',
@@ -235,15 +235,15 @@ export const StyledRadio = styled(Radio)(() => ({
   },
   '&.Mui-checked': {
     color: '#3fff9c',
-  },
-}));
+  }
+}))
 
-export const StyledCheckBox = styled(Checkbox)( () => ({
+export const StyledCheckBox = styled(Checkbox)(() => ({
   color: '#3fff9c',
   '&:hover': {
     color: '#3fff9c',
   },
   '&.Mui-checked': {
     color: '#3fff9c',
-  },
-}));
+  }
+}))
