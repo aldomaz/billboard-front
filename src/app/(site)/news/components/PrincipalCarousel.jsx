@@ -28,7 +28,18 @@ function PrincipalCarousel({responsive, allNews, handleOpen, setNotice, setPosit
         <Carousel
             keyBoardControl={true}
             infinite={true}
-            autoPlay={true}
+            autoPlay={
+                allNews?.length > 1
+                ?
+                true
+                :false
+            }
+            arrows={
+                allNews?.length > 1
+                ?
+                true
+                :false
+            }
             autoPlaySpeed={10000}
             responsive={responsive}    
             containerClass='news_carousel'

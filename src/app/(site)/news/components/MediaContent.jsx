@@ -20,9 +20,10 @@ function MediaContent({notice, findExtension}) {
                 }
                 sx={{
                     height: 'auto',
+                    maxHeight: '90vh',
                     alignSelf: 'center',
-                    borderTopLeftRadius: 0,
-                    borderTopRightRadius: 0,
+                    borderBottomLeftRadius: '20px',
+                    borderBottomRightRadius: '20px',
                 }}
                 image={`${notice?.media.url}`}
                 title="modal_media"

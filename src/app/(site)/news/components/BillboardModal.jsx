@@ -85,42 +85,49 @@ function BillboardModal
                             }}
                         />
                     </CloseButton>
-                    <IconButton
-                        sx={{
-                            position: 'absolute',
-                            top: {xs: '',md:'50%'},
-                            left: {xs: '10%',md:'-10%'},
-                            bottom: {xs: '2.5%', md: '50%'},
-                            color: {
-                                xs: notice[index]?.fontColor
-                                ?
-                                notice[index]?.fontColor === '#000' ? '#fff' : '#131313' 
-                                : '#fff',
-                                sm: '#fff'
-                            }
-                        }}
-                        onClick={() => leftSlide()}
-                    >
-                        <ArrowBack/>
-                    </IconButton>
-                    <IconButton
-                        sx={{
-                            position: 'absolute',
-                            top: {xs: '', md:'50%'},
-                            right: {xs: '10%',md:'-10%'},
-                            bottom: {xs: '2.5%', md: '50%'},
-                            color: {
-                                xs: notice[index]?.fontColor
-                                ?
-                                notice[index]?.fontColor === '#000' ? '#fff' : '#131313' 
-                                : '#fff',
-                                sm: '#fff'
-                            }
-                        }}
-                        onClick={() => rightSlide()}
-                    >
-                        <ArrowForward/>
-                    </IconButton>
+                    {
+                        notice.length > 1
+                        ?
+                        <>
+                            <IconButton
+                                sx={{
+                                    position: 'absolute',
+                                    top: {xs: '',md:'50%'},
+                                    left: {xs: '10%',md:'-10%'},
+                                    bottom: {xs: '2.5%', md: '50%'},
+                                    color: {
+                                        xs: notice[index]?.fontColor
+                                        ?
+                                        notice[index]?.fontColor === '#000' ? '#fff' : '#131313' 
+                                        : '#fff',
+                                        sm: '#fff'
+                                    }
+                                }}
+                                onClick={() => leftSlide()}
+                            >
+                                <ArrowBack/>
+                            </IconButton>
+                            <IconButton
+                                sx={{
+                                    position: 'absolute',
+                                    top: {xs: '', md:'50%'},
+                                    right: {xs: '10%',md:'-10%'},
+                                    bottom: {xs: '2.5%', md: '50%'},
+                                    color: {
+                                        xs: notice[index]?.fontColor
+                                        ?
+                                        notice[index]?.fontColor === '#000' ? '#fff' : '#131313' 
+                                        : '#fff',
+                                        sm: '#fff'
+                                    }
+                                }}
+                                onClick={() => rightSlide()}
+                            >
+                                <ArrowForward/>
+                            </IconButton>
+                        </>
+                        : null
+                    }
                     {
                         selectContent(notice[index]?.__component)
                     }

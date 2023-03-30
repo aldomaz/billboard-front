@@ -28,10 +28,21 @@ function MediumCarousel({responsive, allNews, handleOpen, setNotice, setPosition
         <Carousel
             keyBoardControl={true}
             infinite={true}
-            autoPlay={true}
+            autoPlay={
+                allNews?.length > 1
+                ?
+                true
+                :false
+            }
+            arrows={
+                allNews?.length > 1
+                ?
+                true
+                :false
+            }
             autoPlaySpeed={10000}
             responsive={responsive}    
-            itemClass='news_carousel'
+            containerClass='news_carousel'
         >
             {
                 allNews.map(( news , idx) => (

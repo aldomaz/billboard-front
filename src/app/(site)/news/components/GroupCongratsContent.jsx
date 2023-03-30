@@ -25,7 +25,7 @@ function GroupCongratsContent({notice, findExtension}) {
                         ?
                         notice?.fontColor === '#000' ? '#fff' : '#000'
                         : '#fff',
-                    height: notice?.image ? '56%' : '90%'
+                    height: notice?.image ? {xs: '50%', md:'56%'} : '90%'
                 }}
             >
                 <Box
@@ -51,11 +51,34 @@ function GroupCongratsContent({notice, findExtension}) {
                         { notice?.date}
                     </NewsModalDate>
                 </Box>
-                {
-                    notice?.members.map((member) => (
-                        <NewsModalContent key={member.id}>{member.name}</NewsModalContent>
-                    ))
-                }
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexDirection: {xs: 'column', sm: 'row'},
+                        width: '100%',
+                        gap: '16px'
+                    }}
+                >
+                    <Box
+                        sx={{
+                            width: {xs: '100%', sm: '40%'}
+                        }}
+                    >
+                        {
+                            notice?.members.map((member) => (
+                                <NewsModalContent key={member.id}>{member.name}</NewsModalContent>
+                            ))
+                        }
+                    </Box>
+                    <Box
+                        sx={{
+                            width: {xs: '100%', sm: '60%'}
+                        }}
+                    >
+                        <NewsModalContent>{notice.content}</NewsModalContent>
+                    </Box>
+                </Box>
+                
             </ContentModalContainer>
         </>
     )
