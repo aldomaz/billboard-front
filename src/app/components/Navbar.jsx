@@ -1,6 +1,5 @@
 "use client";
 
-import { getBackgroundColors } from "../../services/client-side/navbarServices";
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
@@ -13,7 +12,7 @@ const Navbar = () => {
         const token = sessionStorage.getItem("token");
 
         if(!token){
-            router.push('/login');
+            router.push('/');
         }
     }
 
@@ -23,7 +22,7 @@ const Navbar = () => {
 
     const logout = () => {
         sessionStorage.clear();
-        router.push('/login');
+        router.push('/');
     }
 
     return (

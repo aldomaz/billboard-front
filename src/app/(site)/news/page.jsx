@@ -72,7 +72,7 @@ function NewsPage() {
             .then( data => setLayouts(data))
             .catch(err => console.log(err.message));
         } else {
-            router.push('/login')
+            router.push('/')
         }
     }, []);
 
@@ -137,11 +137,17 @@ function NewsPage() {
 
     return (
         <SectionContainer>
-            <LayoutSelector 
-                setLayoutSelected={setLayoutSelected}
-                setDirection={setDirection}
-                layouts={layouts?.data.attributes.layouts.data}
-            />
+            {
+                layouts
+                ?
+                <LayoutSelector 
+                    setLayoutSelected={setLayoutSelected}
+                    setDirection={setDirection}
+                    layouts={layouts?.data.attributes.layouts.data}
+                />
+                :
+                null
+            }
             <Box
                 sx={{
                     position: 'absolute',
@@ -152,7 +158,13 @@ function NewsPage() {
                     justifyContent: 'center',
                 }}
             >
-                <img className='brand_logo_image' src={`${logoUrl}`}/>
+                {
+                    logoUrl
+                    ?
+                    <img className='brand_logo_image' src={`${logoUrl}`}/>
+                    :
+                    null
+                }
             </Box>
             {
                 selectLayout()

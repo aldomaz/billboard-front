@@ -30,3 +30,9 @@ export const getLogin = async () => {
 
   return response.data
 }
+
+export const getIcon = async () => {
+  const response = await axios.get(`${serverUrl}/api/login?populate[0]=Icon`)
+
+  return response.data
+}

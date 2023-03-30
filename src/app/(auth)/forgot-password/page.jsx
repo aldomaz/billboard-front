@@ -4,13 +4,22 @@ import { LoginButton, LoginInput } from '@/ui-components/StyledComponents'
 import { Mail } from '@mui/icons-material'
 import { Box, Divider, InputAdornment, Typography } from '@mui/material'
 import { useFormik } from 'formik'
-import { forgotPassword } from '@/services/client-side/authServices'
+import { forgotPassword, getIcon } from '@/services/client-side/authServices'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function ForgotPasswordPage() {
   const [errorMessage, setErrorMessage] = useState(null)
   const [okMessage, setOkMessage] = useState(false)
+  const [iconUrl, setIconUrl] = useState(null);
+
+  useEffect(() => {
+      getIcon()
+      .then(data => {
+          setIconUrl(data.data.attributes.Icon.data.attributes.url);
+      })
+      .catch(err => console.log(err));
+  }, [])
 
   const formik = useFormik({
     initialValues: { email: '' },
@@ -59,17 +68,26 @@ function ForgotPasswordPage() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '5% 0',
+          paddingBottom: 'calc(5% + 50px)',
           width: { xs: '90%', md: '50%' },
           boxShadow: '0px 4px 24px rgba(0,0,0,0.2)',
           backgroundColor: '#131313',
           borderRadius: '20px',
+          zIndex: '10'
         }}
       >
+        {
+            iconUrl
+            ?
+            <img className='login_icon' alt="icon" src={`${iconUrl}`}/>
+            : 
+            null
+        }
         <Typography
           sx={{
             fontSize: { xs: '22px', md: '28px' },
             fontWeight: '700',
+            paddingTop: '5%',
             color: '#3fff9c',
           }}
         >
@@ -138,7 +156,7 @@ function ForgotPasswordPage() {
             Enviar Email
           </LoginButton>
         </Box>
-        <Link href={'/login'} style={{ textDecoration: 'none' }}>
+        <Link href={'/'} style={{ textDecoration: 'none' }}>
           <Typography
             sx={{
               color: '#888',
