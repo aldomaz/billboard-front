@@ -72,9 +72,9 @@ const Login = () => {
                 sx={{
                     display: 'flex',
                     width: '85%',
-                    height: '65%',
                     boxShadow: '0px 4px 24px rgba(0,0,0,0.2)',
-                    borderRadius: '20px'
+                    borderRadius: '20px',
+                    zIndex: '10'
                 }}
             >
                 <Box 
@@ -82,8 +82,10 @@ const Login = () => {
                         display: 'flex',
                         flexDirection: 'column',
                         width: {xs: '100%', md: '60%'},
+                        padding: '1% 0',
                         justifyContent: 'center',
                         border: '2px solid #131313',
+                        paddingBottom: 'calc(5% + 50px)',
                         textAlign: 'center',
                         backgroundColor: '#131313',
                         borderTopLeftRadius: '20px',
@@ -92,13 +94,20 @@ const Login = () => {
                         borderBottomRightRadius: {xs: '20px', md: '0px'}
                     }}
                 >
-                    <img className='login_icon' alt="icon" src={`${loginData?.data.attributes.Icon.data.attributes.url}`}/>
+                    {
+                        loginData?.data.attributes.Icon.data.attributes.url
+                        ?
+                        <img className='login_icon' alt="icon" src={`${loginData.data.attributes.Icon.data.attributes.url}`}/>
+                        :
+                        null
+                    }
                     <Typography
                         sx={{
                             fontSize: {xs: '24px', md: '28px', lg: '32px'},
                             fontWeight: '700',
                             color: '#3fff9c',
                             margin: {xs: '8px 16px', sm: '8px 64px'},
+                            paddingTop: '5%',
                         }}
                     >Ingresa con tu email</Typography>
                     <Divider
@@ -169,7 +178,7 @@ const Login = () => {
                             >INGRESAR</LoginButton>
                         </Box>
                     </form>
-                    <Link href={"/login/forgot-password"} style={{textDecoration: 'none'}}>
+                    <Link href={"/forgot-password"} style={{textDecoration: 'none'}}>
                         <Typography
                             sx={{
                                 color: '#888',

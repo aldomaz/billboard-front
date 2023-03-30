@@ -64,6 +64,7 @@ nav {
 
 .news_carousel {
     width: 100%;
+    border-radius: 10px;
 }
 
 .grad_text{
@@ -289,9 +290,8 @@ nav {
 }
 
 .login_icon{
-    position: absolute;
     width: 50px;
-    top: calc(17% + 8px);
+    align-self: left;
 }
 
 .brand_logo_image{

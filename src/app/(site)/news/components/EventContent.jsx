@@ -26,7 +26,7 @@ function EventContent({notice, findExtension}) {
                         ?
                         notice?.fontColor === '#000' ? '#fff' : '#000'
                         : '#fff',
-                    height: notice?.image ? '56%' : '90%'
+                        height: notice?.image ? {xs: '50%', md:'56%'} : '90%'
                 }}
             >
                 <Box

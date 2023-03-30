@@ -2,19 +2,25 @@
 
 import React, { useEffect, useState } from 'react'
 import { LoginButton, LoginInput } from '@/ui-components/StyledComponents'
-import { Key, Mail, Password } from '@mui/icons-material'
+import { Key } from '@mui/icons-material'
 import { Box, Divider, InputAdornment, Typography } from '@mui/material'
 import Link from 'next/link'
 import { useFormik } from 'formik'
-import { resetPassword } from '@/services/client-side/authServices'
+import { getIcon, resetPassword } from '@/services/client-side/authServices'
 
 function ResetPasswordPage() {
 
     const [codeParam, setCodeParam] = useState();
     const [errorMessage, setErrorMessage] = useState(null);
     const [okMessage, setOkMessage] = useState(false);
+    const [iconUrl, setIconUrl] = useState(null);
 
     useEffect(() => {
+        getIcon()
+        .then(data => {
+            setIconUrl(data.data.attributes.Icon.data.attributes.url);
+        })
+        .catch(err => console.log(err));
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         setCodeParam(urlParams.get('code'));
@@ -73,17 +79,26 @@ function ResetPasswordPage() {
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    padding: '5% 0',
+                    paddingBottom: 'calc(5% + 50px)',
                     width: {xs: '90%', md:'50%'},
                     boxShadow: '0px 4px 24px rgba(0,0,0,0.2)',
                     backgroundColor: '#131313',
-                    borderRadius: '20px'
+                    borderRadius: '20px',
+                    zIndex: '10'
                 }}
             >
+                {
+                    iconUrl
+                    ?
+                    <img className='login_icon' alt="icon" src={`${iconUrl}`}/>
+                    : 
+                    null
+                }
                 <Typography
                     sx={{
                         fontSize: {xs: '22px', md: '28px'},
                         fontWeight: '700',
+                        paddingTop: '5%',
                         color: '#3fff9c',
                     }}
                 >Restablecer contraseña</Typography>
@@ -167,7 +182,7 @@ function ResetPasswordPage() {
                         }}
                     >Reestablecer</LoginButton>
                 </Box>
-                <Link href={"/login"} style={{textDecoration: 'none'}}>
+                <Link href={"/"} style={{textDecoration: 'none'}}>
                     <Typography
                         sx={{
                             color: '#888',

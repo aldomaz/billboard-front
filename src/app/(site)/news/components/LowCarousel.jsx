@@ -28,7 +28,12 @@ function LowCarousel({responsive, allNews, handleOpen, setNotice, setPosition, f
         <Carousel
             keyBoardControl={true}
             infinite={true}
-            autoPlay={true}
+            autoPlay={
+                allNews?.length > 1
+                ?
+                true
+                :false
+            }
             autoPlaySpeed={10000}
             responsive={responsive}    
             arrows={false}
