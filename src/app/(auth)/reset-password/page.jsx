@@ -35,14 +35,12 @@ function ResetPasswordPage() {
                 passwordConfirmation: values.passwordConfirmation
             })
             .then( (data) => {
-                console.log('contraseña reestablecida', data);
                 setOkMessage(data.ok);
                 setErrorMessage(null);
             })
             .catch( (error) => {
                 setErrorMessage(error.response.data.error.message);
                 setOkMessage(false);
-                console.log(error.response.data);
             });
         },
     });

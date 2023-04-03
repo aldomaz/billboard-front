@@ -14,7 +14,7 @@ async function Footer() {
                 <div className="icon_footer">
                     {
                         social_network.map((sn, idx) => (
-                            <a key={idx} href={sn.href}>
+                            <a key={idx} href={sn.href} target='_blank'>
                                 <img className="icon" alt='social' src={`${sn.icon.data.attributes.formats.thumbnail.url}`}/> 
                             </a>
                         ))

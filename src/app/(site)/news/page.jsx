@@ -17,23 +17,7 @@ const videoExt = ['.mp4', '.mpeg', '.mov', '.wmv', 'avi', 'flv'];
 
 const responsive = {
     superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 1
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1
-    },
-    md: {
-      breakpoint: { max: 1024, min: 768 },
-      items: 1
-    },
-    tablet: {
-      breakpoint: { max: 768, min: 464 },
-      items: 1
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 4000, min: 0 },
       items: 1
     }
 };
@@ -62,9 +46,8 @@ function NewsPage() {
             getBillboard(id)
             .then(data => {
                 setAllNews(data.billboard);
-                setLogoUrl(data.billboard.companyLogo.url);
-                console.log(data);
-                document.documentElement.style.setProperty('--background', data.billboard.backgroundColor);
+                setLogoUrl(data.billboard?.companyLogo.url);
+                document.documentElement.style.setProperty('--background', data.billboard?.backgroundColor);
             })
             .catch(err => console.log(err.message));
 
@@ -167,7 +150,21 @@ function NewsPage() {
                 }
             </Box>
             {
+                allNews
+                ?
                 selectLayout()
+                :
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        height: 'calc(100vh - 120px)',
+                        width: '100%'
+                    }}
+                >
+                    Sin noticias cargadas
+                </div>
             }
             <BillboardModal open={openTestModal} handleOpen={handleOpen} notice={notice} index={position} setIndex={setPosition} findExtension={findExtension}/>
         </SectionContainer>
