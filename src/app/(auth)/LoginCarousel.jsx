@@ -11,8 +11,6 @@ export default function LoginCarousel ({ data }) {
     setItems(data)
   }, [data])
 
-  console.log(items)
-
   return (
     <Carousel
       navButtonsAlwaysInvisible

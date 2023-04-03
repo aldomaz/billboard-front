@@ -28,14 +28,12 @@ function ForgotPasswordPage() {
         email: values.email,
       })
         .then((data) => {
-          console.log('email enviado', data);
           setOkMessage(data.ok);
           setErrorMessage(null);
         })
         .catch((error) => {
           setErrorMessage(error.response.data.error.message);
           setOkMessage(false);
-          console.log(error.response.data);
         })
     }
   });
